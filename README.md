@@ -1,6 +1,7 @@
 # Rawr
 ### The greatest compression software ever made
-
+#### disclaimer: im joking dont take this seriously
+if you were taking this seriously before reading this, you should see a psychiatrist or two
 
 ~~this joke has gone too far already~~
 
