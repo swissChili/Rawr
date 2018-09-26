@@ -11,8 +11,6 @@ def compile(file, keys, out):
         o.write(json.dumps(dictionary))
         o.close()
 def get_name(file):
-    file = file.split('.')[:-1]
-    file = ''.join(file)
     return "{}.rawr".format(file)
 
 def repetitions(s):
@@ -50,11 +48,15 @@ def decompile(file_name):
     file = json.loads(file)
     c = file["c"]
     d = file["d"]
-    for i in d:
-        regex = r"\[" + re.escape(i) + r"\]"
-        print(regex, i)
+    for it, i in enumerate(d):
+        regex = r"\[" + re.escape(str(it)) + r"\]"
+        print(i)
         c = re.sub(regex, i, c)
+    file_name = ".".join(file_name.split('.')[:-1])
     print(c)
+    with open(file_name, "w+") as f:
+        f.write(c)
+        f.close()
 
 def main():
     print("this joke went too far already")
